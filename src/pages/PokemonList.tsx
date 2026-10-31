@@ -1,5 +1,5 @@
 // src/pages/PokemonList.tsx
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { apiQueryKeys } from "../queryKeys";
 import { fetchPokemonListWithJapaneseNames } from "../api/pokemonWithJapaneseName";
@@ -12,6 +12,8 @@ import { INITIAL_POKEMON_LIST_LIMIT } from "../config";
 const PAGE_SIZE = INITIAL_POKEMON_LIST_LIMIT;
 
 const PokemonList: React.FC = () => {
+  const [searchText, setSearchText] = useState('');
+
   const {
     data,
     fetchNextPage,

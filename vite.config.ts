@@ -13,4 +13,4 @@ export default defineConfig(({ command, isPreview }) => ({
     setupFiles: './src/test/setup.ts',
   },
 }));
-;
+
